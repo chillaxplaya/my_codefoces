@@ -17,7 +17,17 @@ using namespace std;
 #define ll long long
 
 void solve() {
-
+    string s;
+    cin >> s;
+    int score = 0, acc = 1;
+    for (auto e : s) {
+        if (e == 'O') {
+            score += (acc++);
+        } else {
+            acc = 1;
+        }
+    }
+    cout << score << endl;
 }
 int main() {
     // srand(time(0));

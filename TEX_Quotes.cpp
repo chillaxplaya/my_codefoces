@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdio>
 using namespace std;
 
 #ifdef LOCAL
@@ -17,14 +18,23 @@ using namespace std;
 #define ll long long
 
 void solve() {
-
+    char c;
+    bool q = true;
+    while( (c = getchar()) != EOF) {
+        if(c == '\"') {
+            cout << (q ? "``" : "\'\'");
+            q = !q;
+        } else {
+            cout << c;
+        }
+    }
 }
 int main() {
     // srand(time(0));
     ios::sync_with_stdio(0);
     cout.tie(0), cin.tie(0);
     int T = 1;
-    cin >> T;
+    // cin >> T;
     while(T--) solve();
     return 0;
 }

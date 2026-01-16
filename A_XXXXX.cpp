@@ -8,9 +8,9 @@ using namespace std;
 #endif
 
 #define debug_arr(a, n) \
-    cerr << "[" << #a << "] = {"; \
-    for (int i = 0; i < (n); i++) cerr << (i ? "," : "") << a[i]; \
-    cerr << "}\n";
+  cerr << "[" << #a << "] = {"; \
+  for (int i = 0; i < (n); i++) cerr << (i ? "," : "") << a[i]; \
+  cerr << "}\n";
 
 
 #define all(x) (x).begin(), (x).end()

@@ -15,9 +15,25 @@ using namespace std;
 
 #define all(x) (x).begin(), (x).end()
 #define ll long long
-
+void addDigit(vector<int> &count, int num) {
+    while (num) {
+        count[num%10]++;
+        num /= 10;
+    }
+}
 void solve() {
-
+    int n;
+    vector<int> count(11);
+    cin >> n;
+    for(int i = 1; i <= n; i++) {
+        addDigit(count, i);
+        debug(count);
+    }
+    cout << count[0];
+    for (int i = 1; i < 10; i++) {
+        cout << " " << count[i];
+    }
+    cout << endl;
 }
 int main() {
     // srand(time(0));
