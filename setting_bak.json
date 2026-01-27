@@ -1,0 +1,200 @@
+{
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\admin\\codeforces\\.vscode\\templates\\template.cpp",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "cph.general.showLiveUserCount": true,
+    "cph.language.c.Args": "-DLOCAL",
+    "cph.language.cpp.Args": "-DLOCAL",
+    "cph.general.ignoreSTDERROR": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "codesnap.showWindowControls": false,
+    "editor.fontFamily": "'JetBrains Mono Bold', 'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.lineHeight": 1.6, // 增加行高，让代码更有呼吸感
+    "workbench.list.smoothScrolling": true,
+    "editor.bracketPairColorization.enabled": false, // 开启括号彩色渲染
+    "editor.fontWeight": "bold",
+    "editor.fontSize": 14,
+    "editor.guides.bracketPairs": false,
+    // "editor.guides.bracketPairsHorizontal": true,
+    "workbench.colorCustomizations": {
+        // 基础背景与前景（白色）
+        "editor.background": "#342B3E",
+        "editor.foreground": "#FFFFFF",
+        "editorCursor.foreground": "#FF659C",
+        "editor.lineHighlightBackground": "#494253",
+        "editorLineNumber.foreground": "#4b4b75",
+        "editorLineNumber.activeForeground": "#FF659C",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#FFFFFF",
+        // --- 代码提示框主体 ---
+        "editorSuggestWidget.background": "#1a1a35", // 提示框背景色（建议比编辑器背景略深或略浅）
+        "editorSuggestWidget.border": "#FF659C", // 提示框边框颜色
+        "editorSuggestWidget.foreground": "#FFFFFF", // 普通文字颜色
+        "editorSuggestWidget.selectedBackground": "#2d2d5a", // 选中某一项时的背景色
+        "editorSuggestWidget.highlightForeground": "#FF659C", // 匹配关键字的高亮颜色（如输入 'i' 匹配到 'int'，'i' 的颜色）
+        // --- 代码提示框内的图标颜色 ---
+        "symbolIcon.methodForeground": "#73DFA5", // 方法/函数图标颜色
+        "symbolIcon.variableForeground": "#FFFFFF", // 变量图标颜色
+        "symbolIcon.keywordForeground": "#FF659C", // 关键字图标颜色
+        "symbolIcon.classForeground": "#1AC8FF", // 类图标颜色
+        // --- 参数提示（输入函数括号时的悬浮提示） ---
+        "editorHoverWidget.background": "#1a1a35",
+        "editorHoverWidget.border": "#FF659C"
+    },
+    "editor.semanticHighlighting.enabled": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "keyword",
+                    "storage.modifier",
+                    "keyword.control",
+                    "storage.type", //int string char
+                    "keyword.operator.expression",
+                    "keyword.other.using",
+                    "keyword.other.namespace"
+                ],
+                "settings": {
+                    "foreground": "#FF659C"
+                } // --ray-token-keyword (粉色)
+            },
+            {
+                "scope": [
+                    "entity.name.function",
+                    "entity.name.function.preprocessor",
+                    "support.function"
+                ],
+                "settings": {
+                    "foreground": "#73DFA5"
+                } // --ray-token-function (浅绿)
+            },
+            {
+                "scope": [
+                    "string",
+                    "punctuation.definition.string",
+                    "meta.embedded.assembly"
+                ],
+                "settings": {
+                    "foreground": "#DFD473"
+                } // --ray-token-string (淡黄)
+            },
+            {
+                "scope": [
+                    "constant.numeric"
+                ],
+                "settings": {
+                    "foreground": "#7A7FFD"
+                } // --ray-token-number (紫色)
+            },
+            {
+                "scope": [
+                    "comment",
+                    "punctuation.definition.comment"
+                ],
+                "settings": {
+                    "foreground": "#807796",
+                    "fontStyle": ""
+                } // --ray-token-comment
+            },
+            {
+                "scope": [
+                    "punctuation",
+                    "keyword.operator"
+                ],
+                "settings": {
+                    "foreground": "#FF659C"
+                } // --ray-token-punctuation (粉色)
+            },
+            {
+                "scope": [
+                    "variable.other.constant",
+                    "variable.other.object",
+                    "variable.other.object.access",
+                    "entity.name.type.alias"
+                ],
+                "settings": {
+                    "foreground": "#1AC8FF"
+                } // --ray-token-constant (天蓝)
+            },
+            {
+                // 强制让 ios, cin, cout, string, vector 等类型/变量变为白色
+                "scope": [
+                    "variable",
+                    "support.type",
+                    "support.class",
+                    "variable.other.readwrite",
+                    "punctuation.definition.keyword",
+                    "meta.preprocessor",
+                    "punctuation.section",
+                    "entity.name.scope-resolution",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "foreground": "#FFFFFF"
+                }
+            }
+        ]
+    },
+    "oaicopilot.baseUrl": "https://api.deepseek.com",
+    "oaicopilot.delay": 0,
+    "oaicopilot.retry": {
+        "enabled": true,
+        "max_attempts": 3,
+        "interval_ms": 1000,
+        "status_codes": []
+    },
+    "oaicopilot.commitLanguage": "Chinese (Simplified)",
+    "carbon.backgroundColor": "rgba(171,184,195,1)",
+    //ai
+    "oaicopilot.baseUrl": "https://api.deepseek.com/v1",
+    "oaicopilot.models": [
+        {
+            "id": "deepseek-chat",
+            "owned_by": "deepseek",
+            "apiMode": "openai"
+        },
+        {
+            "id": "deepseek-reasoner",
+            "owned_by": "deepseek",
+            "apiMode": "openai"
+        },
+        {
+            "id": "deepseek-coder",
+            "owned_by": "deepseek",
+            "apiMode": "openai"
+        }
+    ],
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "deepseek.lang": "en",
+    //--
+    //cygin
+    "terminal.integrated.profiles.windows": {
+        "Cygwin": {
+            "path": "C:\\cygwin64\\bin\\bash.exe",
+            "args": [
+                "--login",
+                "-i"
+            ],
+            "env": {
+                "CHERE_INVOKING": "1"
+            }
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Cygwin",
+    //--
+    "files.exclude": {
+        "**/*.exe": true
+    },
+    "explorer.sortOrder": "modified",
+    "chatgpt.localeOverride": "zh-CN"
+}
