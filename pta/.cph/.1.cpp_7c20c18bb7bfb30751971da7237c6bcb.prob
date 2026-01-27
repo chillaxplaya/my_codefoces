@@ -1,0 +1,1 @@
+{"name":"Local: 1","url":"c:\\Users\\admin\\codeforces\\pta\\1.cpp","tests":[{"id":1767087520220,"input":"-1000000 9","output":"-999,991"},{"id":1767087739883,"input":"0 999","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\admin\\codeforces\\pta\\1.cpp","group":"local","local":true}

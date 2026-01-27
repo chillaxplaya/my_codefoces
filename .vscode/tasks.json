@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build c++",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"-g",
+				"-std=gnu++17",
+				"-O2",
+				"-Wall",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-fexec-charset=GBK",    // 1. 设置生成的程序运行时使用 GBK 编码（解决中文输出乱码）
+        		"-finput-charset=UTF-8", // 2. 告诉编译器源文件是 UTF-8（解决中文识别问题）
+				"-DLOCAL",
+				"-I", "C:\\Users\\admin\\codeforces",
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

@@ -1,0 +1,1 @@
+{"name":"Local: abc","url":"c:\\Users\\admin\\codeforces\\abc.cpp","tests":[{"id":1768653466974,"input":"AB\nC\nB","output":"4"},{"id":1768653525822,"input":"\n\nCBA","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\admin\\codeforces\\abc.cpp","group":"local","local":true}
