@@ -15,27 +15,30 @@ using namespace std;
 
 #define all(x) (x).begin(), (x).end()
 #define ll long long
-#define MAXN 1000005
+#define MAXN 1005
 int m, n;
-int a[MAXN], dp[MAXN],pre[MAXN];
 void solve() {
+    
     while (cin >> m >> n) {
+        vector<int> a(n + 1);
+        vector<vector<int>> dp(m + 1, vector<int>(n + 1));
+        vector<vector<int>> local(m + 1, vector<int>(n + 1));
         for (int i = 1; i <= n; i++) {
             cin >> a[i];
-            
         }
-        memset(dp, 0, sizeof(dp));
-        memset(pre, 0 ,sizeof(pre));
-        int temp;
+        dp[0][0] = -1e9;
         for (int i = 1; i <= m; i++) {
-            temp = -1e9;
+            dp[i][i - 1] = -1e9;
             for (int j = i; j <= n; j++) {
-                dp[j] = max(dp[j - 1], pre[j - 1]) + a[j];
-                pre[j - 1] = temp;
-                temp = max(temp, dp[j]);
+                // if (i == 1 && j == 1) {
+                //     debug(local[i][j - 1], dp[i - 1][j - 1]);
+                // }
+                local[i][j] = max(local[i][j - 1], dp[i - 1][j - 1]) + a[j];
+                dp[i][j] = local[i][j];
+                dp[i][j] = max(dp[i][j], dp[i][j - 1]);
             }
         }
-        cout << temp << "\n";
+        cout << dp[m][n] << '\n';
     }
     
 }

@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 #ifdef LOCAL
@@ -15,29 +17,24 @@ using namespace std;
 
 #define all(x) (x).begin(), (x).end()
 #define ll long long
-#define MAXN 1000005
-int m, n;
-int a[MAXN], dp[MAXN],pre[MAXN];
+#define rep(i,n) for (int i = 0; i < n; i++)
+
 void solve() {
-    while (cin >> m >> n) {
-        for (int i = 1; i <= n; i++) {
+    int n;
+    while (cin >> n && n) {
+        debug(n);
+        vector<int> a(n);
+        vector<int> dp(n);
+        for (int i = 0; i < n; i++) {
             cin >> a[i];
-            
+            dp[i] = a[i];
         }
-        memset(dp, 0, sizeof(dp));
-        memset(pre, 0 ,sizeof(pre));
-        int temp;
-        for (int i = 1; i <= m; i++) {
-            temp = -1e9;
-            for (int j = i; j <= n; j++) {
-                dp[j] = max(dp[j - 1], pre[j - 1]) + a[j];
-                pre[j - 1] = temp;
-                temp = max(temp, dp[j]);
+        rep(i, n)
+            for (int j = i - 1; j >= 0; j--) {
+                if (a[i] > a[j]) dp[i] = max(dp[i], dp[j] + a[i]);
             }
-        }
-        cout << temp << "\n";
+        cout << *max_element(all(dp)) << "\n";
     }
-    
 }
 int main() {
     // srand(time(0));
