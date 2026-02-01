@@ -1,5 +1,5 @@
+#include <algorithm>
 #include <bits/stdc++.h>
-#include <string>
 #include <vector>
 using namespace std;
 
@@ -17,43 +17,83 @@ using namespace std;
 
 #define all(x) (x).begin(), (x).end()
 #define ll long long
-void cmd_borrow(vector<pair<string,int>> &shelve,string book) {
-    for (auto e : shelve) {
-        if (e.first == book) {
-            e.second = 0;
+struct book{
+    string name;
+    string author;
+    bool operator<(const book &a) const {
+        return (author != a.author) ?  (author < a.author) : (name < a.name);
+    }
+    int ct; // 2: in  1: return not in shelve   0: borrow
+};
+book getinfo(string a) {
+    book res;
+    size_t l = a.find_first_of("\"");
+    size_t r = a.find_last_of("\"");
+    res.name = a.substr(l + 1, r - l - 1);
+    res.author = a.substr(r + 5, a.size() - r - 6);
+    res.ct = 2;
+    return res;
+    
+}
+void cmdbt(vector<book> &shelve,string b,const int &ct) {
+    for (auto &e : shelve) {
+        if (e.name == b) {
+            e.ct = ct;
+            return;
         }
     }
 }
-void cmd_return(vector<pair<string,int>> &shelve,string book) {
-    for (auto e : shelve) {
-        if (e.first == book) {
-            e.second = 2;
+int findpre(vector<book> &shelve, int i) {
+    for (; i >= 0; i--) {
+        if(shelve[i].ct == 2) {
+            return i;
+        }
+    }
+    return -1;
+}
+void cmdshe(vector<book> &shelve) {
+    for (int i = 0; i < shelve.size(); i++) {
+        if (shelve[i].ct == 1) {
+            int tres = findpre(shelve, i);
+            if (tres != -1) {
+                cout << "Put \"" << shelve[i].name 
+                    << "\" after \"" << shelve[tres].name <<"\"\n";
+            } else {
+                //Put title first
+                cout << "Put \"" << shelve[i].name << "\" first\n";
+            }
+            shelve[i].ct = 2;
         }
     }
 }
 void solve() {
-    string bookau;
-    vector<pair<string,int>> shelve;
-    while (getline(cin, bookau) && bookau != "END") {
-        size_t t1 = bookau.find_first_of("\"");
-        size_t t2 = bookau.find_last_of("\"");
-        string book = bookau.substr(t1, t2 - t1 + 1);
-        shelve.push_back({book, 1});
+    string bookinfo;
+    vector<book> shelve;
+    while (getline(cin, bookinfo) && bookinfo != "END") {
+        shelve.push_back(getinfo(bookinfo));
     }
-    string cmd, book;
+    sort(all(shelve));
+    string cmd, b;
     while (cin >> cmd && cmd != "END") {
-
+        debug(cmd);
         if (cmd == "BORROW") {
             cin.get();
-            getline(cin, book);
-            cmd_borrow(shelve, book);
-        } else if(cmd == "RETURN") {
+            getline(cin, b);
+            b.pop_back();
+            b.erase(b.begin());
+            cmdbt(shelve, b, 0);
+        } else if (cmd == "RETURN") {
             cin.get();
-            getline(cin, book);
-        } else if(cmd == "SHELVE") {
-            
+            getline(cin, b);
+            b.pop_back();
+            b.erase(b.begin());
+            cmdbt(shelve, b, 1);
+        } else if (cmd == "SHELVE") {
+            cmdshe(shelve);
+            cout << "END\n";
         }
     }
+
 }
 int main() {
     // srand(time(0));
