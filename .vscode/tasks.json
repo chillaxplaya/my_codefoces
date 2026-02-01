@@ -17,6 +17,7 @@
         		"-finput-charset=UTF-8", // 2. 告诉编译器源文件是 UTF-8（解决中文识别问题）
 				"-DLOCAL",
 				"-I", "C:\\Users\\admin\\codeforces",
+				"-I", "/Users/ddmac/temp/my_codefoces"
 			],
 			"group": {
 				"kind": "build",
