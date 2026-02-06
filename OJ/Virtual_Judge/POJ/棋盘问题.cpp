@@ -1,3 +1,9 @@
+/*
+棋盘问题: The title of the problem.
+1000: The time limit for the problem in milliseconds.
+1024: The memory limit for the problem in MB.
+https://vjudge.net/problem/POJ-1321: The URL of the problem.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,7 +31,7 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0), cin.tie(0);
     int T = 1;
-    // cin >> T;
+    cin >> T;
     while (T--)
         justdoit();
     return 0;

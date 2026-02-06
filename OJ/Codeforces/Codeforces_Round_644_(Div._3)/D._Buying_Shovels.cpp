@@ -1,3 +1,9 @@
+/*
+D. Buying Shovels: The title of the problem.
+2000: The time limit for the problem in milliseconds.
+256: The memory limit for the problem in MB.
+https://codeforces.com/problemset/problem/1360/D: The URL of the problem.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,7 +31,7 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0), cin.tie(0);
     int T = 1;
-    // cin >> T;
+    cin >> T;
     while (T--)
         justdoit();
     return 0;

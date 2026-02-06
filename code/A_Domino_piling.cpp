@@ -16,20 +16,16 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define ll long long
 #define rep(i,n) for (int i = 0; i < n; i++)
-
-void justdoit() {
+ 
+void solve() {
     int n, m;
     cin >> n >> m;
-    int x, y;
-    vector<int> conn(n, n - 1);
-    rep(i, m) {
-        cin >> x >> y;
-        conn[x - 1]--;
-        conn[y - 1]--;
+    if (n > m) swap(n, m);
+    int ans = m / 2 * n;
+    if (m % 2) {
+            ans += (n / 2);
     }
-    for (auto &e : conn) {
-        cout << ((e < 3) ? 0 : (1LL * e * (e - 1) * (e - 2) / 6)) << " ";
-    }
+    cout << ans;
 }
 int main() {
     // srand(time(0));
@@ -37,6 +33,6 @@ int main() {
     cout.tie(0), cin.tie(0);
     int T = 1;
     // cin >> T;
-    while(T--) justdoit();
+    while(T--) solve();
     return 0;
 }

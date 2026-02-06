@@ -1,3 +1,8 @@
+/*
+A - Feet
+Time Limit: 2000ms Memory Limit: 1024MB
+URL: https://atcoder.jp/contests/abc437/tasks/abc437_a
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,7 +30,7 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0), cin.tie(0);
     int T = 1;
-    // cin >> T;
+    cin >> T;
     while (T--)
         justdoit();
     return 0;

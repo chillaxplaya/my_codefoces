@@ -6,7 +6,7 @@
       "type": "lldb",
       "request": "launch",
 
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
 

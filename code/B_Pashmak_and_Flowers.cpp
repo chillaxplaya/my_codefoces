@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
 #ifdef LOCAL
@@ -18,18 +19,32 @@ using namespace std;
 #define rep(i,n) for (int i = 0; i < n; i++)
 
 void justdoit() {
-    int n, m;
-    cin >> n >> m;
-    int x, y;
-    vector<int> conn(n, n - 1);
-    rep(i, m) {
-        cin >> x >> y;
-        conn[x - 1]--;
-        conn[y - 1]--;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto &e : a) {
+        cin >> e;
     }
-    for (auto &e : conn) {
-        cout << ((e < 3) ? 0 : (1LL * e * (e - 1) * (e - 2) / 6)) << " ";
+    sort(all(a));
+    cout << a[n - 1] - a[0] << " ";
+    if (a[n - 1] - a[0] == 0) {
+        cout << 1LL * (n - 1) * n /2;
+        return;
     }
+    ll lcnt = 1;
+    int l = 0, r = n - 1;
+    while (l < r && a[l + 1] == a[l]) {
+        lcnt++;
+        l++;
+    }
+    ll rcnt = 1;
+    while (l < r && a[r - 1] == a[r]) {
+        rcnt++;
+        r--;
+    }
+    if (l == r) lcnt--;
+    cout << lcnt * rcnt;
+    
 }
 int main() {
     // srand(time(0));

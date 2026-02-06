@@ -18,7 +18,10 @@ using namespace std;
 #define rep(i, n) for (int i = 0; i < n; i++)
 
 void justdoit() {
-    
+    int d, f;
+    cin >> d >> f;
+    d -= f;
+    cout << 7 - (d % 7);
 }
 int main() {
     // srand(time(0));

@@ -80,13 +80,7 @@ void solve1() {
     }
     cout << temp << "\n";
 }
-//ht t
-// ps://91p
-// or
-// ny.com/v
-// ideo/view
-// /59bf
-// e774649ee0df7ea4
+//sk-a0337987fa3844b4bdc28ba028f991f6
 int main() {
     // srand(time(0));
     ios::sync_with_stdio(0);
