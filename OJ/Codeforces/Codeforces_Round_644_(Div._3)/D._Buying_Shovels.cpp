@@ -1,8 +1,7 @@
 /*
-D. Buying Shovels: The title of the problem.
-2000: The time limit for the problem in milliseconds.
-256: The memory limit for the problem in MB.
-https://codeforces.com/problemset/problem/1360/D: The URL of the problem.
+D. Buying Shovels
+Time Limit: 2000ms Memory Limit: 256MB
+URL: https://codeforces.com/problemset/problem/1360/D
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -24,7 +23,26 @@ using namespace std;
 #define rep(i, n) for (int i = 0; i < n; i++)
 
 void justdoit() {
+    debug("------");
+    int n, k;
+    cin >> n >> k;
+    debug(n, k);
+    if (k >= n) {
+        cout << 1 << "\n";
+        return;
+    }
+    int sq = sqrt(n);
+    sq = min(sq, k);
+    int res = 1;
+    for (int i = sq; i >= 1; i--) {
+        if (n % i == 0) {
+            res = max(res, max(i, (n / i) > k ? i : n / i));
+            debug((n / i) > k ? i : n / i);
+            debug(res);
+        }
+    }
     
+    cout << n / res  << "\n";
 }
 int main() {
     // srand(time(0));

@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    - -std=gnu++17
+    - -isystem
+    - C:\mingw64\include
+    - -isystem
+    - C:\mingw64\lib\gcc\x86_64-w64-mingw32\13.2.0\include
+    - -isystem
+    - C:\mingw64\lib\gcc\x86_64-w64-mingw32\13.2.0\include\c++
+    - -isystem
+    - C:\mingw64\lib\gcc\x86_64-w64-mingw32\13.2.0\include\c++\x86_64-w64-mingw32
+    - -isystem
+    - C:\mingw64\lib\gcc\x86_64-w64-mingw32\13.2.0\include\c++\backward

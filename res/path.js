@@ -29,19 +29,38 @@ const process = async () => {
       /* ✅AtCoder 特判：只保留括号里的比赛名 */
       if (platform === "AtCoder") {
         const match = contest.match(/\(([^()]+)\)$/);
-      if (match) {
-        contest = match[1]; 
-        // contest 变成 "AtCoder Beginner Contest 437"
+        if (match) {
+          contest = match[1];
+          // contest 变成 "AtCoder Beginner Contest 437"
+        }
       }
-}
 
       // 目录：OJ/平台/比赛/
       const dir =
         contest !== "Contest"
           ? path.join(root, "OJ", safe(platform), safe(contest))
-            : path.join(root, "OJ", safe(platform));
+          : path.join(root, "OJ", safe(platform));
       // 文件名：题目名.cpp
       let base = safe(name);
+
+      // ✅Codeforces 特判：从 url 提取编号
+      // if (platform === "Codeforces" && problem?.url) {
+      //   const url = problem.url;
+
+      //   const patterns = [
+      //     /\/problemset\/problem\/(\d+)\/([A-Z0-9]+)/,
+      //     /\/contest\/(\d+)\/problem\/([A-Z0-9]+)/,
+      //     /\/gym\/(\d+)\/problem\/([A-Z0-9]+)/,
+      //   ];
+
+      //   for (const reg of patterns) {
+      //     const m = url.match(reg);
+      //     if (m) {
+      //       base = `${m[1]}${m[2]}`; // 1360 + D
+      //       break;
+      //     }
+      //   }
+      // }
 
       // 防止出现 .cpp.cpp
       if (base.toLowerCase().endsWith(".cpp")) {

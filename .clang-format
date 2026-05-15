@@ -1,0 +1,10 @@
+# 基础风格
+BasedOnStyle: Google
+# 缩进宽度
+IndentWidth: 4
+# 允许短的代码块放在同一行
+AllowShortBlocksOnASingleLine: true
+# 不允许把短 for/while/do-while 循环压成单行
+AllowShortLoopsOnASingleLine: false
+# 指针对齐方式 (Left, Right, Middle)
+PointerAlignment: Right

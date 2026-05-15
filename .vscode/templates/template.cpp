@@ -12,15 +12,12 @@ using namespace std;
 #define debug(...) 42
 #endif
 
-#define debug_arr(a, n)                 \
-    cerr << "[" << #a << "] = {";       \
-    for (int i = 0; i < (n); i++)       \
-        cerr << (i ? "," : "") << a[i]; \
-    cerr << "}\n";
-
+#define INF 0x3f3f3f3f
 #define all(x) (x).begin(), (x).end()
 #define ll long long
 #define rep(i, n) for (int i = 0; i < n; i++)
+#define endl '\n'
+typedef pair<int, int> pi;
 
 void justdoit() {
     

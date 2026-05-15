@@ -1,8 +1,28 @@
-{
+{   
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\admin\\codeforces\\.vscode\\templates\\template.cpp",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "cph.general.showLiveUserCount": true,
+    "cph.language.c.Args": "-DLOCAL",
+    "cph.language.cpp.Args": "-DLOCAL",
+    "cph.general.ignoreSTDERROR": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "codesnap.showWindowControls": false,
+    "editor.fontFamily": "'JetBrains Mono Bold', 'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.lineHeight": 1.6, // 增加行高，让代码更有呼吸感
+    "workbench.list.smoothScrolling": true,
+    "editor.bracketPairColorization.enabled": false, // 开启括号彩色渲染
+    "editor.fontWeight": "bold",
+    "editor.fontSize": 14,
+    "editor.guides.bracketPairs": false,
     "files.exclude": {
         "**/*.exe": true
     },
-    "explorer.sortOrder": "modified",
+    "explorer.sortOrder": "default",
     "chatgpt.openOnStartup": true,
     "[cpp]": {
         "editor.tabSize": 4,
