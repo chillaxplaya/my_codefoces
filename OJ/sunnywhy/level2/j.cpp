@@ -1,7 +1,9 @@
 /*
-${title}
+j
 Time Limit: ${timeLimit}ms Memory Limit: ${memoryLimit}MB
 URL: ${url}
+date: 2026-05-20 10:19:25
+user: playa
 */
 #include <bits/stdc++.h>
 using namespace std;

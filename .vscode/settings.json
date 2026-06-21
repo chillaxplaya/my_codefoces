@@ -23,9 +23,17 @@
         "**/*.exe": true
     },
     "explorer.sortOrder": "default",
-    "chatgpt.openOnStartup": true,
+    "chatgpt.openOnStartup": false,
     "[cpp]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": true
-    }
+    },
+    "keyboard.touchbar.ignored": [
+        "workbench.action.navigateBack",
+        "workbench.action.navigateForward",
+        "workbench.action.debug.start",
+        //"workbench.action.debug.run" 
+    ],
+    "touchbarcommandshortcuts.firstCmd": "cph-ng.runAllTestcases",
+    "touchbarcommandshortcuts.secondCmd": "workbench.action.debug.start"
 }

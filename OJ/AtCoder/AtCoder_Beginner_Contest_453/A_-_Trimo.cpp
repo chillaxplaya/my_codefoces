@@ -1,7 +1,7 @@
 /*
-${title}
-Time Limit: ${timeLimit}ms Memory Limit: ${memoryLimit}MB
-URL: ${url}
+A - Trimo
+Time Limit: 2000ms Memory Limit: 1024MB
+URL: https://atcoder.jp/contests/abc453/tasks/abc453_a
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -20,7 +20,14 @@ using namespace std;
 typedef pair<int, int> pi;
 
 void justdoit() {
-    
+    int l;
+    cin >> l;
+    string s;
+    cin >> s;
+    while (s.size() > 0 && s[0] == 'o') {
+        s.erase(0, 1);
+    }
+    cout << s;
 }
 int main() {
     // srand(time(0));

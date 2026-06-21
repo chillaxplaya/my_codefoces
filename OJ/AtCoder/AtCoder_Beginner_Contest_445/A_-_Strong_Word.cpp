@@ -7,7 +7,7 @@ URL: https://atcoder.jp/contests/abc445/tasks/abc445_a
 using namespace std;
 
 #ifdef LOCAL
-#include "algo/debug.h"
+//#include "algo/debug.h"
 #else
 #define debug(...) 42
 #endif
@@ -25,7 +25,6 @@ void justdoit() {
 int main() {
     // srand(time(0));
     ios::sync_with_stdio(0);
-    cout.tie(0), cin.tie(0);
     int T = 1;
     // cin >> T;
     while (T--)
